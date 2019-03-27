@@ -55,15 +55,6 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-	public List<Post> getPosts() {
-		return posts;
-	}
-
-	public void setPosts(List<Post> posts) {
-		this.posts = posts;
-	}
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -87,6 +78,14 @@ public class User implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	
