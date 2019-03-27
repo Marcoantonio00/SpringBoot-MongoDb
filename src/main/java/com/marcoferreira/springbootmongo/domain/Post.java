@@ -1,11 +1,14 @@
 package com.marcoferreira.springbootmongo.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.marcoferreira.springbootmongo.dto.AuthorDto;
+import com.marcoferreira.springbootmongo.dto.CommentDto;
 
 
 
@@ -18,6 +21,8 @@ public class Post {
 	private String title;
 	private String body;
 	private AuthorDto author;
+	
+	private List<CommentDto> comments = new ArrayList<>();
 	
 	public Post() {
 	}
@@ -62,6 +67,21 @@ public class Post {
 	public void setBody(String body) {
 		this.body = body;
 	}
+	public AuthorDto getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(AuthorDto author) {
+		this.author = author;
+	}
+
+	public List<CommentDto> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<CommentDto> comments) {
+		this.comments = comments;
+	}
 
 	@Override
 	public int hashCode() {
@@ -87,13 +107,4 @@ public class Post {
 			return false;
 		return true;
 	}
-
-	public AuthorDto getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(AuthorDto author) {
-		this.author = author;
-	}
-
 }
